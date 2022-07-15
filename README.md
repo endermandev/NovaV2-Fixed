@@ -6,4 +6,10 @@ If you use it please credit me and Ender<br>
 Ender - For developing the base of it<br>
 Enderman - Fixing the Source and updating it<br><br>
 
-And join here! https://discord.gg/pBvXzp68aH
+And join here! https://discord.gg/pBvXzp68aH<br><br><br>
+
+TODO:<br>
+- Add AGID Support (Thanos, etc)<br>
+- Fix Shopping Carts<br>
+- Fix more bugs (Double builds, etc).<br>
+and more!
