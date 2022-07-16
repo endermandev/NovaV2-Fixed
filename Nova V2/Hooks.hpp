@@ -617,6 +617,12 @@ namespace Hooks
 			EditTool->EditActor = EditActor;
 			EditTool->OnRep_EditActor();
 		}
+		
+		if (FuncName.contains("ServerReturnToMainMenu"))
+    	{
+        	auto Controller = (AFortPlayerControllerAthena*)Object;
+        	Controller->ClientReturnToMainMenu(FString());
+    	}
 
 		if (FuncName == "ClientOnPawnDied") {
 			auto CurrentParams = (AFortPlayerControllerZone_ClientOnPawnDied_Params*)Params;
