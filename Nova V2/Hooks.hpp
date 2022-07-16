@@ -655,7 +655,7 @@ namespace Hooks
 					{
 						auto PlayerController = (AFortPlayerControllerAthena*)GetWorld()->NetDriver->ClientConnections[ConnIdx]->PlayerController;
 						if (PlayerController->Pawn)
-							PlayerController->PlayWinEffects();
+							PlayerController->PlayWinEffects(PlayerController->Pawn, Util::FindObjectFast<UFortWeaponItemDefinition>("/Game/Athena/Items/Weapons/WID_Assault_Auto_Athena_R_Ore_T03.WID_Assault_Auto_Athena_R_Ore_T03"), EDeathCause::Rifle);
 							PlayerController->ClientNotifyWon(PlayerController->Pawn, Util::FindObjectFast<UFortWeaponItemDefinition>("/Game/Athena/Items/Weapons/WID_Assault_Auto_Athena_R_Ore_T03.WID_Assault_Auto_Athena_R_Ore_T03"), EDeathCause::Rifle);
 							//GameMode->ReadyToEndMatch();
 							//Gamemode->EndMatch();
