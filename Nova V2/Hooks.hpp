@@ -655,7 +655,10 @@ namespace Hooks
 					{
 						auto PlayerController = (AFortPlayerControllerAthena*)GetWorld()->NetDriver->ClientConnections[ConnIdx]->PlayerController;
 						if (PlayerController->Pawn)
+							PlayerController->PlayWinEffects();
 							PlayerController->ClientNotifyWon(PlayerController->Pawn, Util::FindObjectFast<UFortWeaponItemDefinition>("/Game/Athena/Items/Weapons/WID_Assault_Auto_Athena_R_Ore_T03.WID_Assault_Auto_Athena_R_Ore_T03"), EDeathCause::Rifle);
+							//GameMode->ReadyToEndMatch();
+							//Gamemode->EndMatch();
 					}
 					// CreateThread(0, 0, (LPTHREAD_START_ROUTINE)&ShutdownThread, 0, 0, 0);
 				}
@@ -792,8 +795,24 @@ namespace Hooks
 
 				auto GameState = (AFortGameStateAthena*)GetWorld()->GameState;
 
-				GameState->CurrentPlaylistData = Util::FindObjectFast<UFortPlaylistAthena>("/Game/Athena/Playlists/Playlist_DefaultSolo.Playlist_DefaultSolo");
-				//GameState->CurrentPlaylistData = Util::FindObjectFast<UFortPlaylistAthena>("/Game/Athena/Playlists/Playground/Playlist_Playground.Playlist_Playground");
+				switch(Gamemode::CurrentGM) {
+					case Gamemode::Gamemodes::SOLO:
+						GameState->CurrentPlaylistData = Util::FindObjectFast<UFortPlaylistAthena>("/Game/Athena/Playlists/Playlist_DefaultSolo.Playlist_DefaultSolo");
+					break;
+					case Gamemode::Gamemodes::DUOS:
+						GameState->CurrentPlaylistData = Util::FindObjectFast<UFortPlaylistAthena>("/Game/Athena/Playlists/Playlist_DefaultSolo.Playlist_DefaultSolo");
+					break; 
+					case Gamemode::Gamemodes::SQUADS:
+					GameState->CurrentPlaylistData = Util::FindObjectFast<UFortPlaylistAthena>("/Game/Athena/Playlists/Playlist_DefaultSquad.Playlist_DefaultSquad");
+					break;
+					case Gamemode::Gamemodes::PLAYGROUND:
+						GameState->CurrentPlaylistData = Util::FindObjectFast<UFortPlaylistAthena>("/Game/Athena/Playlists/Playground/Playlist_Playground.Playlist_Playground");
+					break;
+					default:
+						GameState->CurrentPlaylistData = Util::FindObjectFast<UFortPlaylistAthena>("/Game/Athena/Playlists/Playlist_DefaultSolo.Playlist_DefaultSolo");
+					break;
+				}
+
 				if (GameState->CurrentPlaylistData)
 				{
 					GameState->CurrentPlaylistData->bNoDBNO = false;

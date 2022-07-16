@@ -4,13 +4,14 @@
 
 namespace Gamemode {
 	enum class Gamemodes {
-		SOLO,
-		DUOS,
-		SQUADS,
-		ENDGAME,
-		SIPHON,
-		THANOS,
-		HIDEANDSEEK
+		SOLO, // Basic Solos
+		DUOS, // Basic Duos
+		SQUADS, // Basic Squads
+		ENDGAME, // EndGame (WIP)
+		SIPHON, // Siphon
+		THANOS, // Thanos (WIP)
+		HIDEANDSEEK, // Hide and Seek
+		PLAYGROUND
 	};
 
 	Gamemodes CurrentGM = Gamemodes::SOLO;
