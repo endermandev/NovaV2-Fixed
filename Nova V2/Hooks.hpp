@@ -806,7 +806,7 @@ namespace Hooks
 						GameState->CurrentPlaylistData = Util::FindObjectFast<UFortPlaylistAthena>("/Game/Athena/Playlists/Playlist_DefaultSolo.Playlist_DefaultSolo");
 					break;
 					case Gamemode::Gamemodes::DUOS:
-						GameState->CurrentPlaylistData = Util::FindObjectFast<UFortPlaylistAthena>("/Game/Athena/Playlists/Playlist_DefaultSolo.Playlist_DefaultSolo");
+						GameState->CurrentPlaylistData = Util::FindObjectFast<UFortPlaylistAthena>("/Game/Athena/Playlists/Playlist_DefaultDuo.Playlist_DefaultDuo");
 					break; 
 					case Gamemode::Gamemodes::SQUADS:
 					GameState->CurrentPlaylistData = Util::FindObjectFast<UFortPlaylistAthena>("/Game/Athena/Playlists/Playlist_DefaultSquad.Playlist_DefaultSquad");
