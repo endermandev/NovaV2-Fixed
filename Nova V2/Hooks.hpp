@@ -357,7 +357,7 @@ namespace Hooks
 			{
 				bStarted = true;
 
-				auto EventPlayer = UObject::FindObject<ULevelSequencePlayer>("LevelSequencePlayer Athena_Gameplay_Geode.Athena_Gameplay_Geode.PersistentLevel.LevelSequence_LaunchRocket.AnimationPlayer");
+				auto EventPlayer = UObject::FindObject<ULevelSequencePlayer>("LevelSequencePlayer Athena_Gameplay_Geode.PersistentLevel.LevelSequence_LaunchRocket.AnimationPlayer");
 				//auto EventPlayer = Util::FindObjectFast<ULevelSequencePlayer>("LevelSequencePlayer /Game/Athena/Maps/Test/Events/Athena_Gameplay_Geode.Athena_Gameplay_Geode.Athena_Gameplay_Geode.PersistentLevel.LevelSequence_LaunchRocket.AnimationPlayer");
 				EventPlayer->Play();
 			}
